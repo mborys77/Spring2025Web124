@@ -1,1 +1,30 @@
-Test 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="auther" content="Matthew Borys">
+  <meta name="date" content="03-30-25">
+  <!-- Matthew Borys April 2025-->
+ 
+</head>
+<body>
+
+<script>
+
+let name = 'Matthew Borys';
+
+let salary = '$1000000'
+
+var 
+
+
+A variable to store your veteran status (hint: either you are a veteran or you are not a veteran)
+An array to store the names of three of your friends.
+
+An array to store the value of the desired annual salary for your three friends
+A literal object to store the first name, last name, and desired annual salary of yet another friend
+</script>
+</body>
+</html>
