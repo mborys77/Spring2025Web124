@@ -1,0 +1,65 @@
+/* Matthew Borys, March 30-2025 Adapted from https://javascript30.com/
+   JavaScript Drum Kit  */
+/* New Properties: display, flex-direction, align-items, justify-countent, 
+transtion, transform, key, kdb, sound*/
+html {
+  font-size: 10px;
+  background: url('./background.jpg') bottom center;
+  background-size: cover;
+}
+/*Changed font-family*/
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.keys {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.key {
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 10rem;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 .5rem black;
+}
+
+/* Transform scale made biger and color changed*/
+.playing {
+  transform: scale(2.5);
+  border-color: #0c10f1;
+  box-shadow: 0 0 1rem #071cc2;
+}
+/* changed the box to a star and added color change*/
+kbd {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: #ffc600;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  font-size: 3.5rem; 
+  text-align: center;
+  text-decoration-color: #ffc600;
+  line-height: 100px; 
+  border: 2px solid #000; 
+}
+
+.sound {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}
