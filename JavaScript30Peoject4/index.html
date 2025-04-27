@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gone Fishing!</title>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/✅" />
+  <!-- Matthew Borys April 26th 2025-->
+   <!--Adapted from https://javascript30.com/-->
+   <!--
+        New elements: Audio/background sound added.
+        New background img.
+        New CSS and added it to work on small screens.
+        New img instend of mols they are fish and made it into a fishing game called (Gone Fishing).
+        New alert added to show score at the end of the program. 
+        New Music button for background sound.
+        Changed and some new CSS.
+        CSS add for adaptive response for the screen.
+   -->
+</head>
+<body>
+  <!--New button for music-->
+  <div class="button-container">
+    <button onClick="startGame()">Start!</button>
+    <button onClick="toggleMusic()">Music On/Off</button>
+  </div>
+  
+  <!--Background music that will loop when started-->
+  <audio id="backgroundMusic" src="Fishing!.mp3" loop></audio>
+  
+  <h1>Gone Fishing! <span class="score">0</span></h1>
+  <!--Mols are now fish for the div-->
+
+  <div class="game">
+    <div class="hole hole1">
+      <div class="fish"></div>
+    </div>
+    <div class="hole hole2">
+      <div class="fish"></div>
+    </div>
+    <div class="hole hole3">
+      <div class="fish"></div>
+    </div>
+    <div class="hole hole4">
+      <div class="fish"></div>
+    </div>
+    <div class="hole hole5">
+      <div class="fish"></div>
+    </div>
+    <div class="hole hole6">
+      <div class="fish"></div>
+    </div>
+  </div>
+  
+<script>
+  const holes = document.querySelectorAll('.hole');
+  const scoreBoard = document.querySelector('.score');
+  const fishes = document.querySelectorAll('.fish');
+  let lastHole;
+  let timeUp = false;
+  let score = 0;
+
+  function randomTime(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+  }
+
+  function randomHole(holes) {
+    const idx = Math.floor(Math.random() * holes.length);
+    const hole = holes[idx];
+    if (hole === lastHole) {
+      console.log('Ah nah thats the same one bud');
+      return randomHole(holes);
+    }
+    lastHole = hole;
+    return hole;
+  }
+
+  function peep() {
+    const time = randomTime(200, 1000);
+    const hole = randomHole(holes);
+    hole.classList.add('up');
+    setTimeout(() => {
+      hole.classList.remove('up');
+      if (!timeUp) peep();
+    }, time);
+}
+// Added in background sound.
+  function startGame() {
+    scoreBoard.textContent = 0;
+    timeUp = false;
+    score = 0;
+    peep();
+    document.getElementById('backgroundMusic').play();
+   // Added in alert and sets the time up.
+setTimeout(() => {
+  timeUp = true;
+  alert(`Time's up! Your final score is: ${score} Press okay to play again!`);
+  startGame();
+}, 15000);
+
+  }
+  function bonk(e) {
+    if(!e.isTrusted) return;
+    score++;
+    this.parentNode.classList.remove('up');
+    scoreBoard.textContent = score;
+  }
+  fishes.forEach(fish => fish.addEventListener('click', bonk));
+// Code and functions for music
+  let musicPlaying = false;
+const music = document.getElementById('backgroundMusic');
+
+function toggleMusic() {
+  if (musicPlaying) {
+    music.pause();
+  } else {
+    music.play();
+  }
+  musicPlaying = !musicPlaying;
+}
+
+</script>
+</body>
+</html>
