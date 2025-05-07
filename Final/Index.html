@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--Matthew Borys May 5 2025 WEB 124 class-->
+  <!--Make a calculater to make tables using JavaScript the handles 
+  "addition, 
+  subtraction,
+  multiplication and 
+  division"
+  div added for style
+  -->
+  <meta charset="UTF-8">
+  <title>JavaScript Calculater</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>JavaScript Calculator</h1>
+  
+  <label for="num">Enter your desired number!</label>
+  <input type="number" id="num">
+  <button id="Btn">Calculate!</button>
+
+<div class="results">
+  <p id="addition">addition</p>
+  <p id="subtraction">subtraction</p>
+  <p id="multiplication">multiplication</p>
+  <p id="division">division</p>
+</div>
+
+  <script>
+    function calculateAddition(value) {
+      let result = "";
+
+      for (let i = 1; i <= 10; i++) {
+        result += `${value} + ${i} = ${value + i}\n`;
+      }
+      document.getElementById("addition").innerText = result;
+    }
+
+    function calculateSubtraction(value) {
+      let result = "";
+      let i = 1;
+
+      while (i <= 10) {
+        result += `${value} - ${i} = ${value - i}\n`;
+        i++;
+      }
+      document.getElementById("subtraction").innerText = result;
+    }
+
+    function calculateMultiplication(value) {
+      let result = "";
+      let i = 1;
+
+      do {
+        result += `${value} x ${i} = ${value * i}\n`;
+        i++;
+
+      } while (i <= 10);
+      document.getElementById("multiplication\n").innerText = result;
+    }
+
+    function calculateMultiplication(value) {
+      let result = "";
+      let i = 1;
+      do {
+        result += `${value} x ${i} = ${value * i}\n`;
+        i++;
+      } while (i <= 10);
+      document.getElementById("multiplication").innerText = result;
+    }
+
+    function calculateDivision(value) {
+      let result = ""; 
+
+      for (let i = 1; i <= 10; i++) {
+        result += `${value} / ${i} = ${(value / i).toFixed(2)}\n`;
+      }
+      document.getElementById("division").innerText = result;
+    }
+
+    function calculateAll() {
+      const num = parseFloat(document.getElementById("num").value);
+      if (isNaN(num)) return;
+
+      calculateAddition(num);
+      calculateSubtraction(num);
+      calculateMultiplication(num);
+      calculateDivision(num); 
+    }
+      
+    document.getElementById("Btn").addEventListener("click", calculateAll);
+  </script>
+</body>
+</html>

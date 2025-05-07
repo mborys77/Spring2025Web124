@@ -1,0 +1,81 @@
+/*
+Matthew Borys May 5 2025 WEB 124 class-->
+  Make a calculater to make tables using JavaScript the handles 
+  "addition, 
+  subtraction,
+  multiplication and 
+  division"
+  CSS for a nice clean look instead of plain look and to handle different sizes of screens
+*/
+
+body {
+  background-color: lightblue;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  background-image:url(background.jpg); 
+  background-size: cover;
+  background-position: center;
+}
+
+label {
+  font-size: large;
+}
+
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+  line-height: 1;
+  margin-bottom: 0;
+}
+.results {
+  display: flex;
+  flex-wrap: wrap;      
+  gap: 1rem;            
+  margin-top: 20px;
+  justify-content: center; 
+}
+
+.results p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+  flex: 1 1 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f0f0f0;
+  min-height: 150px;
+  font-size: medium;
+}
+
+button {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background-color: #18ddf7;
+  color: white;
+  border-radius: 8px 16px;
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
+  margin-top: 20px;
+}
+
+@media (max-width: 575.98px) {
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+@media (min-width: 1200px) {
+}
+
+
